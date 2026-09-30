@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    document.documentElement.classList.replace("no-js", "js");
+    // Carga el tema guardado antes de pintar (evita el parpadeo)
+    try {
+      var t = localStorage.getItem("coronda-theme");
+      if (t !== "dark" && t !== "light") t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO BÁSICO ============ -->
+  <title>Coronda · Capital Nacional de la Frutilla — Turismo, eventos e historia</title>
+  <meta name="description" content="Descubrí Coronda, Santa Fe: la Capital Nacional de la Frutilla. Fiesta Nacional de la Frutilla, Maratón Acuática Santa Fe–Coronda, historia, gastronomía, lugares para visitar y todo para planificar tu escapada." />
+  <meta name="keywords" content="Coronda, Santa Fe, San Jerónimo, Capital Nacional de la Frutilla, Fiesta Nacional de la Frutilla, Maratón Santa Fe Coronda, turismo Coronda, historia Coronda, frutillas Coronda" />
+  <meta name="author" content="Coronda — Guía de turismo y eventos" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#c14737" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- CANONICAL: reemplazá por tu dominio final, ej. https://tusuario.github.io/coronda/ -->
+  <link rel="canonical" href="https://TU-USUARIO.github.io/coronda/" />
+
+  <!-- ============ GOOGLE SEARCH CONSOLE (verificación) ============
+       Pegá aquí el <meta name="google-site-verification" content="..."> que te da Search Console. -->
+  <!-- <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION" /> -->
+
+  <!-- ============ OPEN GRAPH / REDES ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Coronda · Capital Nacional de la Frutilla" />
+  <meta property="og:title" content="Coronda · Capital Nacional de la Frutilla" />
+  <meta property="og:description" content="Turismo, eventos e historia de Coronda, Santa Fe. Fiesta Nacional de la Frutilla, Maratón Santa Fe–Coronda y mucho más." />
+  <meta property="og:url" content="https://TU-USUARIO.github.io/coronda/" />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coronda · Capital Nacional de la Frutilla" />
+  <meta name="twitter:description" content="Turismo, eventos e historia de Coronda, Santa Fe." />
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Rendimiento: precarga del hero y CDN de imágenes -->
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+  <link rel="preload" as="image" fetchpriority="high" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1920px-Strawberry_Fields_%2814576465314%29.jpg" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ============ GOOGLE ADSENSE ============
+       1. Creá tu cuenta en https://adsense.google.com
+       2. Cuando aprueben tu sitio, pegá aquí el bloque <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+       3. Activá los bloques de anuncio marcados con class="ad-slot" más abajo. -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TU_ID_PUBLICADOR" crossorigin="anonymous"></script> -->
+
+  <!-- ============ GOOGLE ANALYTICS (opcional) ============
+       Para medir visitas: creá una propiedad en https://analytics.google.com,
+       copiá tu ID (G-XXXXXXXXXX) y descomentá este bloque. -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+  -->
+
+  <!-- ============ DATOS ESTRUCTURADOS (JSON-LD) ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Coronda · Capital Nacional de la Frutilla",
+    "url": "https://TU-USUARIO.github.io/coronda/",
+    "inLanguage": "es-AR",
+    "description": "Guía de turismo, eventos e historia de Coronda, Santa Fe."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "Coronda",
+    "description": "Coronda es la Capital Nacional de la Frutilla, cabecera del departamento San Jerónimo, provincia de Santa Fe, Argentina. Famosa por su producción de frutillas, su Fiesta Nacional de la Frutilla y la Maratón Acuática Internacional Santa Fe–Coronda.",
+    "url": "https://TU-USUARIO.github.io/coronda/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Coronda",
+      "addressRegion": "Santa Fe",
+      "postalCode": "S2240",
+      "addressCountry": "AR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -31.9745, "longitude": -60.9160 }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Fiesta Nacional de la Frutilla",
+    "description": "La fiesta más importante de Coronda y una de las más convocantes de la región. Reúne a productores, artesanos, artistas y público con stands, gastronomía a base de frutilla, la elección de la Reina Nacional de la Frutilla y grandes shows en vivo. Se realiza cada año el primer fin de semana de noviembre en la plaza central de Coronda.",
+    "startDate": "2026-11-06",
+    "endDate": "2026-11-08",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Plaza central de Coronda",
+      "address": { "@type": "PostalAddress", "addressLocality": "Coronda", "addressRegion": "Santa Fe", "addressCountry": "AR" }
+    },
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg",
+    "isAccessibleForFree": true,
+    "organizer": { "@type": "Organization", "name": "Municipalidad de Coronda" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Maratón Acuática Internacional Santa Fe–Coronda",
+    "description": "Una de las pruebas de aguas abiertas más prestigiosas del mundo: 57 km de natación por el río Coronda, desde Santa Fe hasta Coronda, conocida como «la más linda del mundo». Se realiza cada año en el mes de febrero.",
+    "startDate": "2026-02-01",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Río Coronda",
+      "address": { "@type": "PostalAddress", "addressLocality": "Coronda", "addressRegion": "Santa Fe", "addressCountry": "AR" }
+    },
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== SPRITE DE ICONOS SVG (Lucide + frutilla) ===================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-strawberry" viewBox="0 0 24 24">
+      <path d="M12 21c-4.5 0-7.5-2.7-7.5-6.5C4.5 9.6 7.6 7 12 7s7.5 2.6 7.5 7.5c0 3.8-3 6.5-7.5 6.5z"/>
+      <path d="M9 7c-1.5-1-3.4-1.2-4.5-.6"/>
+      <path d="M15 7c1.5-1 3.4-1.2 4.5-.6"/>
+      <path d="M12 7c-.3-1.8-1.3-3-2.5-3.5"/>
+      <path d="M12 7c.3-1.8 1.3-3 2.5-3.5"/>
+      <circle cx="8.6" cy="11" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="10.2" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="15.4" cy="11.2" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="7.6" cy="14" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="11.2" cy="14.6" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="14.6" cy="15" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="10.2" cy="17.6" r=".45" fill="currentColor" stroke="none"/>
+      <circle cx="13.6" cy="18" r=".45" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="icon-landmark" viewBox="0 0 24 24"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+    <symbol id="icon-navigation" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="icon-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
+    <symbol id="icon-school" viewBox="0 0 24 24"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
+    <symbol id="icon-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icon-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></symbol>
+    <symbol id="icon-flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></symbol>
+    <symbol id="icon-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="icon-theater" viewBox="0 0 24 24"><path d="M2 10s3-3 3-8"/><path d="M22 10s-3-3-3-8"/><path d="M10 2c0 4.4-3.6 8-8 8"/><path d="M14 2c0 4.4 3.6 8 8 8"/><path d="M2 10s2 2 2 5"/><path d="M22 10s-2 2-2 5"/><path d="M8 15h8"/><path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/><path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="icon-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+    <symbol id="icon-bus" viewBox="0 0 24 24"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></symbol>
+    <symbol id="icon-glass-water" viewBox="0 0 24 24"><path d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z"/><path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"/></symbol>
+    <symbol id="icon-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></symbol>
+    <symbol id="icon-ice-cream" viewBox="0 0 24 24"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7"/><path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4"/></symbol>
+    <symbol id="icon-gift" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></symbol>
+    <symbol id="icon-fish" viewBox="0 0 24 24"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/><path d="M18 12v.5"/><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"/><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"/><path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"/><path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98"/></symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  </svg>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand-mark" src="favicon.svg" alt="" width="34" height="34" />
+        <span class="brand-text">
+          <strong>Coronda</strong>
+          <small>Capital Nacional de la Frutilla</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#porque">Por qué venir</a>
+        <a href="#historia">Historia</a>
+        <a href="#frutilla">La Frutilla</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#turismo">Qué visitar</a>
+        <a href="#comer">Dónde comer</a>
+        <a href="#galeria">Galería</a>
+        <a href="#como-llegar">Cómo llegar</a>
+        <a href="#apoyar" class="nav-cta">Apoyar <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar a tema oscuro" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-moon"/></svg></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===================== HERO / INICIO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <img class="flag-chip" src="bandera-coronda.svg" alt="Bandera de Coronda" />
+          <span>Provincia de Santa Fe · Depto. San Jerónimo</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="line reveal">Bienvenido a</span>
+          <span class="hero-name reveal">Coronda</span>
+          <span class="hero-sub reveal">Capital Nacional de la <em>Frutilla</em></span>
+        </h1>
+        <p class="hero-lead reveal">
+          Una ciudad con más de 350 años de historia, frutillas que son orgullo nacional, un río
+          que invita a quedarse y una de las fiestas más lindas del país. Descubrí todo lo que
+          Coronda tiene para ofrecerte.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#eventos">Ver eventos</a>
+          <a class="btn btn-ghost" href="#turismo">Qué visitar</a>
+        </div>
+        <div class="hero-scroll reveal" aria-hidden="true">
+          <span>Deslizá para explorar</span>
+          <i class="scroll-line"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CIFRAS RÁPIDAS ===================== -->
+    <section class="stats" aria-label="Datos destacados">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <span class="stat-num" data-count="1664" data-suffix="">1.664</span>
+          <span class="stat-label">Origen de la localidad</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="19487" data-suffix="">19.487</span>
+          <span class="stat-label">Habitantes (censo 2022)</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="7" data-suffix=" M">7 M</span>
+          <span class="stat-label">Kilos de frutilla al año</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="45" data-suffix="%">45%</span>
+          <span class="stat-label">De la producción nacional</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat-num" data-count="57" data-suffix=" km">57 km</span>
+          <span class="stat-label">De maratón acuática</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== POR QUÉ VISITAR ===================== -->
+    <section class="section section-cream" id="porque">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Tu próxima escapada</span>
+          <h2>¿Por qué visitar Coronda?</h2>
+          <p class="section-intro">
+            No es solo la frutilla: es la calma del río, el patrimonio de un pueblo que supo
+            guardar su historia y la calidez de su gente. Estos son sus puntos fuertes.
+          </p>
+        </header>
+
+        <div class="cards-grid">
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-strawberry"/></svg></div>
+            <h3>La capital de la frutilla</h3>
+            <p>El 45% de la frutilla que se consume en Argentina sale de acá. Fresca, dulce y en su punto: probarla en origen no tiene comparación.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-droplet"/></svg></div>
+            <h3>Río, playas y pesca</h3>
+            <p>El río Coronda baña la ciudad con sus arenas y atardeceres. Ideal para un día de playa, pesca deportiva o simplemente mirar el agua pasar.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-landmark"/></svg></div>
+            <h3>Patrimonio vivo</h3>
+            <p>Más de 350 años de historia en edificios, iglesias y museos que se recorren a pie, en un casco histórico que conserva su esencia.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg></div>
+            <h3>Fiestas todo el año</h3>
+            <p>La Fiesta Nacional de la Frutilla, la Maratón Santa Fe–Coronda y la Fiesta del Estudiante marcan el pulso de una ciudad que sabe celebrar.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-navigation"/></svg></div>
+            <h3>Cerca de todo</h3>
+            <p>A 47 km de Santa Fe y 122 km de Rosario, por autopista. Una escapada perfecta para el fin de semana sin largas horas de viaje.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></div>
+            <h3>Gente de pueblo</h3>
+            <p>La hospitalidad corondina se siente en cada charla, en cada feria y en cada mate. Te vas con ganas de volver.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HISTORIA ===================== -->
+    <section class="section" id="historia">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Nuestras raíces</span>
+          <h2>Historia de Coronda</h2>
+          <p class="section-intro">
+            Una historia que arranca con los pueblos originarios, cruza la colonia y llega hasta
+            la ciudad moderna que hoy recibe a miles de visitantes.
+          </p>
+        </header>
+
+        <div class="history-layout">
+          <div class="history-text">
+            <p class="reveal">
+              <strong>El nombre</strong> viene de los <strong>Corondás</strong>, un pueblo originario
+              que habitaba la zona junto a los Timbúes. Coronda era su cacique, un «Gran Señor» por
+              jerarquía y fama; los españoles usaron ese nombre para su gente y para la tierra.
+            </p>
+            <p class="reveal">
+              La localidad nace con la <strong>entrega de tierras del 28 de marzo de 1664</strong>,
+              lo que la convierte en una de las ciudades más tradicionales de la provincia de Santa Fe.
+              Con los años se consolidó como <strong>cabecera del departamento San Jerónimo</strong>
+              y punto de cruce sobre el río Coronda, en la margen derecha del Paraná.
+            </p>
+            <p class="reveal">
+              Por Coronda pasaron historias que dejaron huella: la poeta <strong>Alfonsina Storni</strong>
+              se formó en su Escuela Normal a comienzos del siglo XX, y el gaucho que inspiró la célebre
+              novela <strong>«Don Segundo Sombra»</strong> de Ricardo Güiraldes nació en estas tierras.
+            </p>
+            <p class="reveal">
+              Hoy, con cerca de <strong>20.000 habitantes</strong>, Coronda combina su tradición
+              frutihortícola con un perfil turístico que no deja de crecer.
+            </p>
+          </div>
+
+          <figure class="history-figure reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg/1280px-Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg"
+                 alt="Iglesia San Jerónimo de Coronda, templo histórico del centro de la ciudad" loading="lazy" />
+            <figcaption>Parroquia San Jerónimo, uno de los emblemas del casco histórico.</figcaption>
+          </figure>
+        </div>
+
+        <div class="timeline">
+          <ol>
+            <li class="reveal">
+              <span class="tl-year">Siglos XV–XVI</span>
+              <h4>Pueblos originarios</h4>
+              <p>Los Corondás y los Timbúes habitan la región a la llegada de los españoles.</p>
+            </li>
+            <li class="reveal">
+              <span class="tl-year">1664</span>
+              <h4>Entrega de tierras</h4>
+              <p>El 28 de marzo se entregan las tierras que dan origen a la localidad.</p>
+            </li>
+            <li class="reveal">
+              <span class="tl-year">Siglo XIX</span>
+              <h4>Consolidación</h4>
+              <p>Coronda se afianza como cabecera departamental y polo de la región.</p>
+            </li>
+            <li class="reveal">
+              <span class="tl-year">1909</span>
+              <h4>Alfonsina Storni</h4>
+              <p>La poeta llega a formarse como maestra en la Escuela Normal de Coronda.</p>
+            </li>
+            <li class="reveal">
+              <span class="tl-year">1946–1958</span>
+              <h4>Nace la Fiesta</h4>
+              <p>Se crea la Fiesta de la Frutilla; en 1958 el Gobierno Nacional la declara «Nacional».</p>
+            </li>
+            <li class="reveal">
+              <span class="tl-year">Hoy</span>
+              <h4>Capital Nacional</h4>
+              <p>Coronda produce cerca de 7 millones de kilos de frutilla al año y recibe visitantes de todo el país.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LA FRUTILLA ===================== -->
+    <section class="section section-frutilla" id="frutilla">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Nuestro orgullo</span>
+          <h2>La frutilla corondina</h2>
+          <p class="section-intro">
+            Si algo define a Coronda es su frutilla. Te contamos por qué es especial y cómo
+            disfrutarla al máximo en tu visita.
+          </p>
+        </header>
+
+        <div class="frutilla-grid">
+          <div class="frutilla-media reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Fragaria_ananassa20140913_132.jpg/1280px-Fragaria_ananassa20140913_132.jpg"
+                 alt="Frutillas frescas de producción local" loading="lazy" />
+            <img class="frutilla-media-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg"
+                 alt="Plantación de frutillas en plena producción" loading="lazy" />
+          </div>
+
+          <div class="frutilla-text">
+            <div class="frutilla-facts">
+              <div class="fact reveal"><strong>≈ 7 millones</strong><span>de kilos por año</span></div>
+              <div class="fact reveal"><strong>≈ 45%</strong><span>de la producción nacional</span></div>
+              <div class="fact reveal"><strong>N° 1</strong><span>Capital Nacional de la Frutilla</span></div>
+            </div>
+            <p class="reveal">
+              El clima subtropical sin estación seca y las tierras de la zona le dan a la frutilla
+              corondina un <strong>dulzor y aroma únicos</strong>. Por algo Coronda es reconocida en
+              todo el país como la <strong>Capital Nacional de la Frutilla</strong>.
+            </p>
+            <p class="reveal">
+              En temporada, la frutilla se vive en todos los formatos: recién cosechada, con crema,
+              en licuados, tartas, helados, dulces y licores. Comprar directo al productor es parte
+              del encanto de la escapada.
+            </p>
+            <ul class="frutilla-list reveal">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Frutillas frescas directo de la quinta</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Frutilla con crema, el clásico corondino</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Tartas, dulces, licuados y helados artesanales</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Ferias y puestos de productores locales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EVENTOS ===================== -->
+    <section class="section section-cream" id="eventos">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Agenda corondina</span>
+          <h2>Eventos y fiestas</h2>
+          <p class="section-intro">
+            Coronda celebra todo el año. Estas son las fechas que no te podés perder.
+          </p>
+        </header>
+
+        <div class="events-list">
+
+          <article class="event-card reveal">
+            <div class="event-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg"
+                   alt="Fiesta Nacional de la Frutilla, puestos y celebración en la plaza central" loading="lazy" />
+              <span class="event-badge">El más esperado</span>
+            </div>
+            <div class="event-body">
+              <span class="event-date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg> Primer fin de semana de noviembre</span>
+              <h3>Fiesta Nacional de la Frutilla</h3>
+              <p>
+                La fiesta mayor de Coronda y una de las más convocantes de la región. Nació en 1946
+                de la mano de la Sociedad Cooperativa de Agricultores y desde 1958 tiene carácter
+                nacional (Decreto N° 007182/58).
+              </p>
+              <p>
+                Durante tres jornadas, la plaza central y dos cuadras de la calle San Martín se llenan
+                de <strong>carpas, stands de artesanos y emprendedores y puestos gastronómicos</strong>
+                (más de 200 en las últimas ediciones). Hay <strong>elección de la Reina Nacional de
+                la Frutilla</strong>, desfiles, peñas, academias de danza, artistas locales y grandes
+                shows en vivo con entrada libre y gratuita.
+              </p>
+              <p class="event-highlight"><svg class="icon" aria-hidden="true"><use href="#icon-strawberry"/></svg><span>Todo a base de frutilla: con crema, en licuados, tartas y dulces recién hechos.</span></p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <div class="event-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cartel_Coronda_2026-06-25.jpg/1280px-Cartel_Coronda_2026-06-25.jpg"
+                   alt="Costanera y río Coronda, escenario de la maratón acuática" loading="lazy" />
+              <span class="event-badge event-badge-blue">Deportivo</span>
+            </div>
+            <div class="event-body">
+              <span class="event-date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg> Febrero de cada año</span>
+              <h3>Maratón Acuática Internacional Santa Fe – Coronda</h3>
+              <p>
+                Una de las pruebas de aguas abiertas <strong>más prestigiosas del mundo</strong>:
+                <strong>57 kilómetros</strong> de natación por el río Coronda, con nadadores y nadadoras
+                de distintos países. Es conocida como <strong>«la más linda del mundo»</strong> por el
+                acompañamiento masivo del público a lo largo de las costaneras.
+              </p>
+              <p>
+                El recorrido une Santa Fe con Coronda pasando por Santo Tomé, Sauce Viejo y Desvío
+                Arijón, y se vive como una verdadera fiesta popular en toda la ribera.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <div class="event-img event-img-plain">
+              <span class="event-emoji"><svg class="icon" aria-hidden="true"><use href="#icon-graduation-cap"/></svg></span>
+              <span class="event-badge event-badge-green">Juventud</span>
+            </div>
+            <div class="event-body">
+              <span class="event-date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg> Septiembre</span>
+              <h3>Fiesta Provincial del Estudiante</h3>
+              <p>
+                Coronda es sede de esta fiesta que reúne a estudiantes de toda la provincia con
+                actividades, elección de representantes, carrozas, peñas y mucha energía joven.
+                Una cita que ya superó las tres décadas de historia.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <div class="event-img event-img-plain">
+              <span class="event-emoji"><svg class="icon" aria-hidden="true"><use href="#icon-theater"/></svg></span>
+              <span class="event-badge event-badge-red">Carnaval</span>
+            </div>
+            <div class="event-body">
+              <span class="event-date"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg> Verano</span>
+              <h3>Paseo de Murgas y carnavales</h3>
+              <p>
+                El color y el ritmo de las murgas locales salen a la calle durante el verano.
+                Comparsas, disfraces y batucadas que ya se convirtieron en una de las fiestas
+                populares más queridas por los corondinos.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TURISMO / LUGARES ===================== -->
+    <section class="section" id="turismo">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Recorré la ciudad</span>
+          <h2>Lugares que tenés que conocer</h2>
+          <p class="section-intro">
+            Un paseo a pie por el casco histórico te alcanza para enamorarte de Coronda.
+          </p>
+        </header>
+
+        <div class="places-grid">
+          <figure class="place reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg/1280px-Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg"
+                 alt="Parroquia San Jerónimo de Coronda" loading="lazy" />
+            <figcaption><strong>Parroquia San Jerónimo</strong><span>El corazón religioso y patrimonial del pueblo.</span></figcaption>
+          </figure>
+          <figure class="place reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg/960px-Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg"
+                 alt="Fachada del Museo Municipal José Manuel Maciel" loading="lazy" />
+            <figcaption><strong>Museo Municipal José Manuel Maciel</strong><span>Historia, arqueología y la memoria de la región.</span></figcaption>
+          </figure>
+          <figure class="place reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Edificio_jefatura_politica_coronda_schlie.jpg/960px-Edificio_jefatura_politica_coronda_schlie.jpg"
+                 alt="Edificio de la antigua Jefatura Política del departamento" loading="lazy" />
+            <figcaption><strong>Antigua Jefatura Política</strong><span>Hoy Unidad Regional XV de la Policía, un edificio con historia.</span></figcaption>
+          </figure>
+          <figure class="place reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cartel_Coronda_2026-06-25.jpg/1280px-Cartel_Coronda_2026-06-25.jpg"
+                 alt="Cartel de bienvenida a Coronda" loading="lazy" />
+            <figcaption><strong>La bienvenida</strong><span>El clásico cartel para tu foto de recuerdo.</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="places-extra">
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-map-pin"/></svg> Plaza Urquiza</div>
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-landmark"/></svg> Casona Larrechea (Municipalidad)</div>
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg> Biblioteca Popular</div>
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-flag"/></svg> Plazoleta Héroes de Malvinas</div>
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-school"/></svg> Ex Escuela Normal de Maestros Rurales</div>
+          <div class="place-chip reveal"><svg class="icon" aria-hidden="true"><use href="#icon-droplet"/></svg> Costanera y playas del río Coronda</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DÓNDE COMER ===================== -->
+    <section class="section section-gastro" id="comer">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Sabores de acá</span>
+          <h2>Dónde comer: la gastronomía corondina</h2>
+          <p class="section-intro">
+            La frutilla es la reina, pero no viene sola: el río y la tradición criolla completan
+            una mesa bien de pueblo. Esto es lo que no podés dejar de probar.
+          </p>
+        </header>
+
+        <div class="cards-grid cards-4">
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-strawberry"/></svg></div>
+            <h3>Frutilla con crema</h3>
+            <p>El clásico corondino: frutillas frescas de la zona con crema. Lo encontrás en puestos, confiterías y en la Fiesta.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-cake"/></svg></div>
+            <h3>Tartas y postres</h3>
+            <p>Tartas de frutilla, tortas y postres caseros que se lucen en las ferias y en las mesas familiares.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-glass-water"/></svg></div>
+            <h3>Licuados y batidos</h3>
+            <p>Licuados de frutilla bien fríos, el compañero ideal para un día de calor en la costanera.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-ice-cream"/></svg></div>
+            <h3>Helados artesanales</h3>
+            <p>Helados y cremas heladas hechos con la fruta local, para refrescarse después de recorrer el pueblo.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-gift"/></svg></div>
+            <h3>Dulces y licores</h3>
+            <p>Mermeladas, dulces y licores de frutilla para llevarte Coronda a tu casa y alargar el viaje.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-fish"/></svg></div>
+            <h3>Cocina de río</h3>
+            <p>Pescado fresco del río Coronda y comidas criollas en las casas de comidas del pueblo.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg></div>
+            <h3>Directo del productor</h3>
+            <p>En temporada, comprá la frutilla recién cosechada a las familias productoras de la zona.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-coffee"/></svg></div>
+            <h3>Merienda de pueblo</h3>
+            <p>Tortas fritas, pastelitos y pan casero: la merienda clásica de los pueblos santafesinos.</p>
+          </article>
+        </div>
+
+        <p class="gastro-note reveal"><svg class="icon" aria-hidden="true"><use href="#icon-info"/></svg><span><strong>Consejo:</strong> de agosto a noviembre la frutilla está en su mejor momento. Durante la Fiesta Nacional de la Frutilla, la oferta gastronómica se multiplica por toda la plaza. Para recomendaciones puntuales, preguntá a los corondinos: nadie conoce mejor dónde se come bien.</span></p>
+      </div>
+    </section>
+
+    <!-- ===================== GALERÍA ===================== -->
+    <section class="section section-cream" id="galeria">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Postales</span>
+          <h2>Galería de imágenes</h2>
+          <p class="section-intro">Un vistazo a los rincones y colores de Coronda.</p>
+        </header>
+
+        <div class="gallery" id="gallery">
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg/1280px-Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg" data-caption="Parroquia San Jerónimo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg/960px-Iglesia_de_San_Jer%C3%B3nimo_%28Coronda%29.jpg" alt="Parroquia San Jerónimo" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/1280px-Strawberry_Fields_%2814576465314%29.jpg" data-caption="Plantación de frutillas">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Strawberry_Fields_%2814576465314%29.jpg/960px-Strawberry_Fields_%2814576465314%29.jpg" alt="Plantación de frutillas" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg/960px-Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg" data-caption="Museo Municipal José Manuel Maciel">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg/960px-Fachada_del_Museo_Municipal_Jos%C3%A9_Manuel_Maciel.jpg" alt="Museo Municipal José Manuel Maciel" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Fragaria_ananassa20140913_132.jpg/1280px-Fragaria_ananassa20140913_132.jpg" data-caption="Frutillas corondinas">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Fragaria_ananassa20140913_132.jpg/960px-Fragaria_ananassa20140913_132.jpg" alt="Frutillas corondinas frescas" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Edificio_jefatura_politica_coronda_schlie.jpg/960px-Edificio_jefatura_politica_coronda_schlie.jpg" data-caption="Antigua Jefatura Política">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Edificio_jefatura_politica_coronda_schlie.jpg/960px-Edificio_jefatura_politica_coronda_schlie.jpg" alt="Antigua Jefatura Política" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/2009-365-215_First_Strawberry_Spotted_in_Strawberry_%283783406191%29.jpg/1280px-2009-365-215_First_Strawberry_Spotted_in_Strawberry_%283783406191%29.jpg" data-caption="Detalle de frutilla">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/2009-365-215_First_Strawberry_Spotted_in_Strawberry_%283783406191%29.jpg/960px-2009-365-215_First_Strawberry_Spotted_in_Strawberry_%283783406191%29.jpg" alt="Detalle de frutilla" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cartel_Coronda_2026-06-25.jpg/1280px-Cartel_Coronda_2026-06-25.jpg" data-caption="Cartel de bienvenida">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cartel_Coronda_2026-06-25.jpg/960px-Cartel_Coronda_2026-06-25.jpg" alt="Cartel de bienvenida a Coronda" loading="lazy" />
+          </button>
+          <button class="gallery-item reveal" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Moneda_hispano_americana_%28museo_Coronda%29.jpg/960px-Moneda_hispano_americana_%28museo_Coronda%29.jpg" data-caption="Pieza del Museo de Coronda">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Moneda_hispano_americana_%28museo_Coronda%29.jpg/960px-Moneda_hispano_americana_%28museo_Coronda%29.jpg" alt="Moneda hispanoamericana del Museo de Coronda" loading="lazy" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CÓMO LLEGAR / DATOS ÚTILES ===================== -->
+    <section class="section" id="como-llegar">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Planificá tu viaje</span>
+          <h2>Cómo llegar y datos útiles</h2>
+        </header>
+
+        <div class="info-grid">
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-car"/></svg> En auto</h3>
+            <p>Por la <strong>Autopista Santa Fe–Rosario (AP-01)</strong> o la <strong>Ruta Nacional 11</strong>. A 47 km de Santa Fe y 122 km de Rosario.</p>
+          </div>
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-plane"/></svg> En avión</h3>
+            <p>El <strong>Aeropuerto de Sauce Viejo</strong> está a unos 25 km. Desde ahí, un corto trayecto por autopista.</p>
+          </div>
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-bus"/></svg> En colectivo</h3>
+            <p>Coronda cuenta con servicios de larga y media distancia que la conectan con Santa Fe, Rosario y otras localidades de la región.</p>
+          </div>
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-sun"/></svg> Clima</h3>
+            <p>Subtropical, sin estación seca. Veranos cálidos e inviernos suaves: primavera y verano son ideales para disfrutar la frutilla y el río.</p>
+          </div>
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-map-pin"/></svg> Ubicación</h3>
+            <p>Centro-este de la provincia de Santa Fe, sobre el río Coronda. Coordenadas: 31°58′S · 60°55′O. Código postal S2240.</p>
+          </div>
+          <div class="info-block reveal">
+            <h3><svg class="icon" aria-hidden="true"><use href="#icon-map"/></svg> Mapa</h3>
+            <a class="map-link" href="https://www.google.com/maps/place/Coronda,+Santa+Fe" target="_blank" rel="noopener">Abrir Coronda en Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== APOYAR EL PROYECTO ===================== -->
+    <section class="section section-support" id="apoyar">
+      <div class="container support-inner">
+        <div class="support-text reveal">
+          <span class="eyebrow">Ayudanos a seguir</span>
+          <h2>¿Te sirvió esta información?</h2>
+          <p>
+            Esta guía se mantiene con cariño y dedicación para que cualquier persona pueda
+            descubrir Coronda. Si te gustó y querés apoyar el proyecto, podés invitarme un cafecito.
+            ¡Gracias de corazón! <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+          </p>
+          <!-- Botón de Cafecito: https://cafecito.app/mateouuuzbz -->
+          <a class="btn btn-cafecito" href="https://cafecito.app/mateouuuzbz" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#icon-coffee"/></svg> Invitame un cafecito
+          </a>
+        </div>
+        <div class="support-card reveal">
+          <img src="bandera-coronda.svg" alt="Bandera de Coronda" />
+          <span>Hecho con orgullo corondino</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-title">Coronda <svg class="icon" aria-hidden="true"><use href="#icon-strawberry"/></svg></span>
+        <p>Capital Nacional de la Frutilla.<br />Departamento San Jerónimo · Santa Fe · Argentina.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Explorá</h4>
+        <a href="#historia">Historia</a>
+        <a href="#frutilla">La Frutilla</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#turismo">Qué visitar</a>
+        <a href="#comer">Dónde comer</a>
+        <a href="#galeria">Galería</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Útil</h4>
+        <a href="#como-llegar">Cómo llegar</a>
+        <a href="#apoyar">Apoyar el proyecto</a>
+        <a href="https://www.coronda.gov.ar" target="_blank" rel="noopener">Sitio oficial municipal</a>
+        <a href="https://www.santafe.tur.ar" target="_blank" rel="noopener">Turismo Santa Fe</a>
+      </div>
+      <div class="footer-credits">
+        <h4>Créditos</h4>
+        <p>
+          Fotografías: <a href="https://commons.wikimedia.org/wiki/Category:Coronda" target="_blank" rel="noopener">Wikimedia Commons</a>
+          (bajo licencias libres). Bandera y escudo oficiales de Coronda.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Coronda · Guía turística y de eventos. Todos los derechos reservados.</p>
+      <p class="footer-love">Hecho con <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg> y frutillas.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Botón volver arriba -->
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
