@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reemplazá TU-USUARIO por tu usuario de GitHub (o tu dominio final)
+Sitemap: https://TU-USUARIO.github.io/coronda/sitemap.xml

@@ -1,0 +1,19 @@
+{
+  "name": "Coronda · Capital Nacional de la Frutilla",
+  "short_name": "Coronda",
+  "description": "Guía de turismo, eventos e historia de Coronda, Santa Fe.",
+  "lang": "es-AR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf5ee",
+  "theme_color": "#c14737",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
